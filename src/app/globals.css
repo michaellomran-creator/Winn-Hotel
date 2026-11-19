@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --lake: #173b4a;
+  --ivory: #f5f0e7;
+  --sand: #d9c5a8;
+  --terra: #b96f50;
+  --charcoal: #252a29;
+  --sage: #899487;
+  --white: #ffffff;
+  --lake-deep: #0f2a35;
+  --ivory-soft: #faf7f2;
+}
+
+@theme inline {
+  --color-lake: var(--lake);
+  --color-lake-deep: var(--lake-deep);
+  --color-ivory: var(--ivory);
+  --color-ivory-soft: var(--ivory-soft);
+  --color-sand: var(--sand);
+  --color-terra: var(--terra);
+  --color-charcoal: var(--charcoal);
+  --color-sage: var(--sage);
+  --color-white: var(--white);
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-manrope);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--terra) 35%, transparent);
+  color: var(--charcoal);
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.label-caps {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.texture-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.hero-scrim {
+  background: linear-gradient(
+    105deg,
+    rgba(15, 42, 53, 0.72) 0%,
+    rgba(15, 42, 53, 0.45) 45%,
+    rgba(15, 42, 53, 0.25) 100%
+  );
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 3px;
+}
+
+.img-zoom {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .img-zoom,
+.group:focus-within .img-zoom {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-zoom {
+    transition: none;
+  }
+
+  .group:hover .img-zoom,
+  .group:focus-within .img-zoom {
+    transform: none;
+  }
+}
