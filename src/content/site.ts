@@ -11,10 +11,16 @@ export const site = {
   location: {
     city: "Bahir Dar",
     country: "Ethiopia",
-    /** Verify exact street address with management */
-    addressLine: "Giorgis Road, Bahir Dar, Ethiopia",
+    /** Address: Giorgis Road, near Flavor Juice & Pizzeria */
+    addressLine: "Giorgis Road, near Flavor Juice & Pizzeria, Bahir Dar, Ethiopia",
     addressNeedsConfirmation: true,
+    landmark: "Near Flavor Juice & Pizzeria",
+    coordinatesVerified: false,
     near: "Central city area · Convenient reach of Lake Tana",
+    directionsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=Winn+Hotel,+Giorgis+Road,+near+Flavor+Juice+%26+Pizzeria,+Bahir+Dar,+Ethiopia",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Winn+Hotel,+Giorgis+Road,+near+Flavor+Juice+%26+Pizzeria,+Bahir+Dar,+Ethiopia",
   },
   contact: {
     phone: "+251 93 041 5765",
@@ -32,6 +38,8 @@ export const site = {
     /** Add verified profiles when available */
     facebook: "",
     instagram: "",
+    tripadvisor:
+      "https://www.tripadvisor.com/Hotel_Review-g480192-d16805637-Reviews-Wynn_Hotel_Bahir_Dar-Bahir_Dar_Amhara_Region.html",
   },
   booking: {
     mode: "enquiry" as const,
@@ -50,6 +58,7 @@ export const navLinks = [
   { href: "/rooms", label: "Rooms" },
   { href: "/dining", label: "Dining" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/explore", label: "Explore Bahir Dar" },
+  { href: "/explore", label: "Explore" },
+  { href: "/reviews", label: "Guest Reviews" },
   { href: "/contact", label: "Contact" },
 ] as const;

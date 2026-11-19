@@ -8,11 +8,11 @@ All items below must be verified with hotel management before public launch.
 - [ ] Confirm three-star positioning language
 
 ## Contact & location
-- [ ] Exact street address (currently: Giorgis Road, Bahir Dar)
-- [ ] Official phone number
+- [x] Address set to known location: Giorgis Road, near Flavor Juice & Pizzeria, Bahir Dar, Ethiopia
+- [x] Interactive Google Maps embed and "Get Directions" link implemented
+- [ ] Confirm exact GPS latitude & longitude coordinates with management to replace temporary address search query
 - [ ] Official reservations email
 - [ ] WhatsApp number (if offered)
-- [ ] Google Maps coordinates / embed
 - [ ] Reception hours
 
 ## Rooms & rates
@@ -46,16 +46,21 @@ All items below must be verified with hotel management before public launch.
   - Shared spaces
 - [ ] Destination imagery may remain regional (Lake Tana, etc.) with clear labeling
 
-## Booking
+## Booking & Enquiries
 - [ ] Confirm enquiry email / webhook (`ENQUIRY_WEBHOOK_URL`)
 - [ ] Or integrate verified booking engine if one exists
 - [ ] Keep “awaiting confirmation” messaging if no live booking API
 
-## Testimonials
-- [ ] Supply verified guest quotes with name + source permission
-- [ ] Do not invent reviews or scores
+## Reviews & Testimonials
+- [x] Tripadvisor listing linked: `https://www.tripadvisor.com/Hotel_Review-g480192-d16805637-Reviews-Wynn_Hotel_Bahir_Dar-Bahir_Dar_Amhara_Region.html`
+- [ ] Supply official Tripadvisor widget embed code or Partner API access token if automatic rating & review count synchronization is desired
+- [ ] Confirm Google Business Profile claim for Google Maps reviews integration
+- [x] Dedicated Guest Reviews page (`/reviews`) and submission form implemented
+- [x] Review moderation portal (`/admin/reviews`) configured — set `ADMIN_MODERATION_KEY` in production (.env)
+- [ ] Never manufacture or fabricate reviews; publish only verified, approved guest submissions
 
 ## Technical
 - [ ] Set `NEXT_PUBLIC_SITE_URL`
-- [ ] Configure production enquiry delivery
+- [ ] Set `ADMIN_MODERATION_KEY` (secret key for `/admin/reviews` moderation portal)
+- [ ] Configure production enquiry & review notification webhook (`ENQUIRY_WEBHOOK_URL`)
 - [ ] Final accessibility / performance pass

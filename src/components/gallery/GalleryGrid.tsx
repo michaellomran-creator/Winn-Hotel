@@ -21,6 +21,13 @@ export function GalleryGrid() {
       ? galleryItems
       : galleryItems.filter((i) => i.category === filter);
 
+  function step(dir: number) {
+    if (!active) return;
+    const idx = filtered.findIndex((i) => i.id === active.id);
+    const next = filtered[(idx + dir + filtered.length) % filtered.length];
+    setActive(next);
+  }
+
   useEffect(() => {
     if (!active) return;
     const onKey = (e: KeyboardEvent) => {
@@ -36,13 +43,6 @@ export function GalleryGrid() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active, filtered]);
-
-  function step(dir: number) {
-    if (!active) return;
-    const idx = filtered.findIndex((i) => i.id === active.id);
-    const next = filtered[(idx + dir + filtered.length) % filtered.length];
-    setActive(next);
-  }
 
   return (
     <>
